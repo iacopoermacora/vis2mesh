@@ -28,3 +28,8 @@ rm -rf ./tools/vvmesh_build ./tools/openMVS_build ./tools/bin ./tools/lib ./tool
 ./tools/build_openmvs.sh
 # Clean Build cache
 rm -rf ./tools/vvmesh_build ./tools/openMVS_build
+# If not already present a pth file inside checkpoints, download the pre-trained model by running ./checkpoints/get_pretrained.sh
+if [ ! -f checkpoints/VDVNet_CascadePPP_epoch30.pth ]; then
+    ./checkpoints/get_pretrained.sh
+fi
+
