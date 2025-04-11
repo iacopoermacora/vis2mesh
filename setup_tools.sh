@@ -23,8 +23,8 @@ pip install -qq "conan<2" open3d imageio gdown
 # Clean Cache
 rm -rf ./tools/vvmesh_build ./tools/openMVS_build ./tools/bin ./tools/lib ./tools/include ./tools/vcglib
 # Build vvmesh
-./tools/build_vvmesh.sh
+# ./tools/build_vvmesh.sh
 # Build OpenMVS
-./tools/build_openmvs.sh
+# ./tools/build_openmvs.sh
 # Clean Build cache
 rm -rf ./tools/vvmesh_build ./tools/openMVS_build

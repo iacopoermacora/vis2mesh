@@ -303,11 +303,17 @@ def RunProcess(config):
     ## Run vvtool commands
     p = subprocess.Popen([config['Toolset']['vvtool'],config['RENDER_SEG_PATH']],stdout=subprocess.PIPE)
     outs, errs = p.communicate()
+    print('FIRST OUTS:',outs)
+    print('FIRST ERRS:',errs)
     p = subprocess.Popen(['python','tools/lib/network_predict.py',config['VIS_SEG_PATH']],stdout=subprocess.PIPE)
     # p = subprocess.Popen([config['Toolset']['vvtool'],config['VIS_SEG_PATH']],stdout=subprocess.PIPE)
     outs, errs = p.communicate()
+    print('outs:',outs)
+    print('errs:',errs)
     p = subprocess.Popen([config['Toolset']['vvtool'],config['BUNDLE_SEG_PATH']],stdout=subprocess.PIPE)
     outs, errs = p.communicate()
+    print('outs:',outs)
+    print('errs:',errs)
     
     openmvsMeshRecon = config['Toolset']['ReconstructMesh']
     cmdArr = None
@@ -370,9 +376,13 @@ def parseArgs():
 
 
 def main():
+    print("1. RUNNING SETUP")
     config=Setup(parseArgs())
+    print("2. CREATING CAMERAS")
     config=CreateCam(config)
+    print("3. CREATING TASK JSON")
     config=CreateTaskJson(config)
+    print("4. RUNNING PROCESS")
     config=RunProcess(config)
     print('Process Done')
 
