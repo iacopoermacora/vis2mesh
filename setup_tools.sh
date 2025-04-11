@@ -28,3 +28,4 @@ rm -rf ./tools/vvmesh_build ./tools/openMVS_build ./tools/bin ./tools/lib ./tool
 # ./tools/build_openmvs.sh
 # Clean Build cache
 rm -rf ./tools/vvmesh_build ./tools/openMVS_build
+
